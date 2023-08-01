@@ -13,7 +13,7 @@ const CryptoList: React.FC =  () => {
     const { data } = useFetch<Crypto[]>('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","BNBUSDT","ADAUSDT","MATICUSDT","XRPUSDT","DOGEUSDT","SOLUSDT","TRXUSDT","USDCUSDT","LTCUSDT","DOTUSDT"]')
 
     if (!data) {
-        return <p>Carregando...</p>
+        return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-100">Loading...</p>
     }
 
 
