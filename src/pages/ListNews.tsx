@@ -15,7 +15,7 @@ interface ListNews {
     publishedAt: string
 }
 
-const tokenNews = process.env.NEWS
+// const tokenNews = process.env.NEWS
 
 const ListNews: React.FC =  () => {
     const { data } = useFetch<ListNews[]>('https://newsapi.org/v2/everything?q=crypto&apiKey=e1f2a77104144cee92bfc6693320c8a6')
