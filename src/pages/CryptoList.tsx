@@ -11,10 +11,13 @@ interface Crypto {
 const name = ["BTCUSDT","ETHUSDT","BNBUSDT","ADAUSDT","MATICUSDT","XRPUSDT","DOGEUSDT","SOLUSDT","TRXUSDT","USDCUSDT","LTCUSDT","DOTUSDT","TRXUSDT","EOSUSDT","ETCUSDT","LINKUSDT","WAVESUSDT","OMGUSDT","THETAUSDT"]
 
 const CryptoList: React.FC =  () => {
-    const { data } = useFetch<Crypto[]>('https://api.binance.com/api/v3/ticker/24hr')
+    const { data, error } = useFetch<Crypto[]>('https://api.binance.com/api/v3/ticker/24hr')
 
     if (!data) {
         return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-700 mt-36">Wait...</p>
+    }
+    if (error) {
+        return <p>Failed..</p>
     }
 
     const filteredData = data.filter((symbols: any) => symbols.symbol.includes("USDT") && symbols.priceChangePercent != 0);

@@ -15,13 +15,14 @@ interface ListNews {
     publishedAt: string
 }
 
-// const tokenNews = process.env.NEWS
-
 const ListNews: React.FC =  () => {
-    const { data } = useFetch<ListNews[]>('https://newsapi.org/v2/everything?q=crypto&apiKey=e1f2a77104144cee92bfc6693320c8a6')
+    const { data, error } = useFetch<ListNews[]>('https://newsapi.org/v2/everything?q=crypto&apiKey=e1f2a77104144cee92bfc6693320c8a6')
 
     if (!data) {
         return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-700 mt-36">Wait...</p>
+    }
+    if (error) {
+        return <p>Just in Dev Mode..</p>
     }
 
     return (
@@ -46,14 +47,13 @@ const ListNews: React.FC =  () => {
                         {
                             filterDate
                         }
-                        console.log(id.urlToImage)
 
                         if(filterDate == date) {
                             return (
                                 <>
                                     <Link href={id.url} target="blank">
                                         <ul className="grid h-full gap-2 p-2 border-2 border-black rounded-lg cursor-pointer">
-                                            <li className="text-xl">{id.title}</li>
+                                            <li className="text-xl border-b-2 border-black drop-shadow-3xl">{id.title}</li>
                                             {/* <li>
                                                 <Image
                                                 unoptimized
