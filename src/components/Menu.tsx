@@ -10,7 +10,7 @@ export default function Menu() {
                         <Link href="/">Market</Link>
                     </li>
                     <li className="p-1 px-6 border-2 border-black rounded-2xl">
-                        <Link href="/NewsList">News</Link>
+                        <Link href="/ListNews">News</Link>
                     </li>
                 </ul>
             </div>

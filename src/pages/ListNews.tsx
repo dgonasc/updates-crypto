@@ -21,7 +21,7 @@ const ListNews: React.FC =  () => {
     const { data } = useFetch<ListNews[]>('https://newsapi.org/v2/everything?q=crypto&apiKey=e1f2a77104144cee92bfc6693320c8a6')
 
     if (!data) {
-        return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-100">Loading...</p>
+        return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-700 mt-36">Wait...</p>
     }
 
     return (

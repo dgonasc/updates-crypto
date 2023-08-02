@@ -14,7 +14,7 @@ const CryptoList: React.FC =  () => {
     const { data } = useFetch<Crypto[]>('https://api.binance.com/api/v3/ticker/24hr')
 
     if (!data) {
-        return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-700">Wait...</p>
+        return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-700 mt-36">Wait...</p>
     }
 
     const filteredData = data.filter((symbols: any) => symbols.symbol.includes("USDT") && symbols.priceChangePercent != 0);
