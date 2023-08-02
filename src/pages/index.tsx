@@ -1,6 +1,5 @@
 import CryptoList from './CryptoList'
 import { SWRConfig } from 'swr'
-// import CryptoListMKT from './CryptoListCoinMKT'
 import Menu from '@/components/Menu'
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
         }}
       >
         <CryptoList />
-        {/* <CryptoListMKT /> */}
       </SWRConfig>
     </div>
   )
