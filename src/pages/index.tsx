@@ -1,12 +1,12 @@
-import { Inter } from 'next/font/google'
 import CryptoList from './CryptoList'
 import { SWRConfig } from 'swr'
-
-const inter = Inter({ subsets: ['latin'] })
+import CryptoListMKT from './CryptoListCoinMKT'
+import Menu from '@/components/Menu'
 
 export default function Home() {
   return (
     <div>
+      <Menu />
       <SWRConfig
         value={{
           refreshInterval: 1000,
@@ -14,6 +14,7 @@ export default function Home() {
         }}
       >
         <CryptoList />
+        {/* <CryptoListMKT /> */}
       </SWRConfig>
     </div>
   )
