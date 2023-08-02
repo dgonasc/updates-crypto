@@ -19,7 +19,6 @@ const tokenNews = process.env.NEWS
 
 const ListNews: React.FC =  () => {
     const { data } = useFetch<ListNews[]>('https://newsapi.org/v2/everything?q=crypto&apiKey=e1f2a77104144cee92bfc6693320c8a6')
-    console.log(data);
 
     if (!data) {
         return <p className="flex justify-center m-10 text-4xl font-bold tracking-widest text-gray-100">Loading...</p>
@@ -28,9 +27,11 @@ const ListNews: React.FC =  () => {
     return (
         <div>
             <Menu />
-            <div>
-                <ul className="grid justify-center grid-cols-2 gap-4 m-4">
+            <div className="mt-24">
+                <ul className="static grid justify-center grid-cols-2 gap-4 m-4">
                     {data.articles.map((id: any) => {
+                        let image = id.urlToImage;
+                        console.log(image);
                         let date = id.publishedAt.slice(5,7);
                         let now = new Date();
                         let filterDate = now.toString().slice(4, 7)
@@ -45,16 +46,19 @@ const ListNews: React.FC =  () => {
                         {
                             filterDate
                         }
+                        console.log(id.urlToImage)
 
                         if(filterDate == date) {
                             return (
                                 <>
                                     <Link href={id.url} target="blank">
-                                        <ul className="grid gap-2 p-2 border-2 border-black rounded-lg cursor-pointer h-36">
+                                        <ul className="grid h-full gap-2 p-2 border-2 border-black rounded-lg cursor-pointer">
                                             <li className="text-xl">{id.title}</li>
                                             {/* <li>
                                                 <Image
-                                                src={id.urlToImage}
+                                                unoptimized
+                                                src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2023/07/blockchain-social-media.jpg"
+                                                // src={id.urlToImage}
                                                 alt="News Image"
                                                 width={300}
                                                 height={180}

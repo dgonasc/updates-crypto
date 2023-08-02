@@ -22,8 +22,8 @@ const CryptoList: React.FC =  () => {
 
     return (
         <>
-            <div>
-                <ul className="grid items-center justify-center grid-cols-1 gap-2 mx-10 mb-4 lg:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-24">
+                <ul className="static grid items-center justify-center grid-cols-1 gap-2 mx-10 mb-4 lg:grid-cols-3 xl:grid-cols-4">
                     {filteredData.map((symbols: any) => {
                         let name = symbols.symbol.replace("USDT", '')
                         let color = ' bg-green-800'
