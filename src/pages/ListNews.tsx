@@ -52,7 +52,7 @@ const ListNews: React.FC =  () => {
                             return (
                                 <>
                                     <Link href={id.url} target="blank">
-                                        <ul className="grid h-full gap-2 p-2 border-2 border-black rounded-lg cursor-pointer">
+                                        <ul className="grid h-full gap-2 p-2 text-gray-700 border-2 border-black rounded-lg cursor-pointer">
                                             <li className="text-xl border-b-2 border-black drop-shadow-3xl">{id.title}</li>
                                             {/* <li>
                                                 <Image

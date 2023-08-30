@@ -34,11 +34,11 @@ const CryptoList: React.FC =  () => {
                             color = ' bg-red-800'
                         }
                         return (
-                            <li className={"flex items-center justify-between border-2 rounded-3xl p-2 sm:px-9 shadow-lg border-black shadow-black" + color} key={symbols.symbol}>
+                            <li className={"flex items-center justify-between border-2 rounded-3xl p-2 sm:px-9 shadow-lg border-white shadow-white" + color} key={symbols.symbol}>
                                 <h2 className="font-serif text-3xl font-semibold tracking-widest text-gray-100 ">{name}</h2>
                                 <div className="grid justify-center">
                                     <h3 className="my-2 font-serif text-3xl font-semibold tracking-widest text-gray-100">$ {parseFloat(symbols.lastPrice)}</h3>
-                                    <h4 className="ml-10 font-serif text-xl text-gray-100 ">{parseFloat(symbols.priceChangePercent)} %</h4>
+                                    <h4 className="ml-10 font-serif text-lg text-gray-100 ">{parseFloat(symbols.priceChangePercent)} %</h4>
                                 </div>
                             </li>
                         )
