@@ -7,7 +7,10 @@ export default function Menu() {
                 <p className="m-4 ml-8 text-3xl font-bold border-0 drop-shadow-lg">Crypto Update</p>
                 <ul className="flex gap-6 m-4 mr-12 text-xl font-bold ">
                     <li className="p-1 px-6 border-2 border-gray-500 drop-shadow-lg rounded-xl">
-                        <Link href="/">Market</Link>
+                        <Link href="/">CoinCap</Link>
+                    </li>
+                    <li className="p-1 px-6 border-2 border-gray-500 drop-shadow-lg rounded-xl">
+                        <Link href="/Binance">Binance</Link>
                     </li>
                     {/* <li className="p-1 px-6 border-2 border-gray-500 drop-shadow-lg rounded-2xl">
                         <Link href="/ListNews">News</Link>

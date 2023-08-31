@@ -1,6 +1,7 @@
-import CryptoList from './CryptoList'
+import CryptoList from './Binance'
 import { SWRConfig } from 'swr'
 import Menu from '@/components/Menu'
+import CryptoListCCap from './CoinCap'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
           fetcher: (resource, init) => fetch(resource, init).then(res => res.json())
         }}
       >
-        <CryptoList />
+      <CryptoListCCap />
       </SWRConfig>
     </div>
   )
