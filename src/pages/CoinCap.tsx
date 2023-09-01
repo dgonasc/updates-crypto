@@ -27,7 +27,7 @@ const CryptoListCCap: React.FC =  () => {
         return <p>Failed..</p>
     }
 
-    const filteredData = data.data.filter((symbols: any) => symbols.rank < 21);
+    const filteredData = data.data.filter((symbols: any) => symbols.rank < 21 && symbols.changePercent24Hr != 0);
     filteredData.sort((a: { rank: number }, b: { rank: number }) =>  a.rank - b.rank);
 
     return (
