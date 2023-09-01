@@ -33,12 +33,13 @@ const CryptoListCCap: React.FC =  () => {
     return (
         <>
             <Menu />
-            <div className="mt-24">
+            <h1 className="flex items-center justify-center m-8 text-3xl font-semibold uppercase mt-28 text-slate-500">API CoinCap</h1>
+            <div className="mt-2 sm:mt-6">
                 <ul className="static grid items-center justify-center grid-cols-1 gap-2 mx-10 mb-4 lg:grid-cols-3 xl:grid-cols-4">
                 {filteredData.map((symbols: any) => {
-                    let color = ' bg-green-800'
+                    let color = ' bg-green-800 opacity-90'
                     if (symbols.changePercent24Hr < '0')  {
-                        color = ' bg-red-800'
+                        color = ' bg-red-800 opacity-90'
                     }
 
                     return (
