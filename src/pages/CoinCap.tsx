@@ -1,5 +1,5 @@
 import Menu from "@/components/Menu";
-import { useFetch } from "@/hooks/useFetch"
+import { useFetchCoinCap } from "@/hooks/useFetchCoinCap";
 import React from "react"
 
 interface Crypto {
@@ -17,7 +17,7 @@ interface Crypto {
 }
 
 const CryptoListCCap: React.FC =  () => {
-    const { data, error } = useFetch<Crypto[]>('https://api.coincap.io/v2/assets');
+    const { data, error } = useFetchCoinCap<Crypto[]>('https://api.coincap.io/v2/assets');
     console.log(data);
 
     if (!data) {
